@@ -30,7 +30,8 @@ public class ModuloDati
          System.out.println();
          System.out.println("Menu Principale:");
          System.out.println("1. Accedi come utente");
-         System.out.println("2. Esci");
+         System.out.println("2. Registrazione nuovo utente");
+         System.out.println("3. Esci");
 
          // Inserimento scelta
          System.out.print("Inserisci la tua scelta: ");
@@ -58,6 +59,18 @@ public class ModuloDati
                break;
 
             case 2:
+                  flag = inserimentoNuovoUtente();
+                  if(flag)
+                  {
+                     System.out.println("Inserimento nuovo utente efettuato con successo");
+                  }
+                  else
+                  {
+                     System.out.println("Username o Password errati");
+                  }
+               break;
+
+            case 3:
                   System.exit(0);
                break;
 
@@ -65,7 +78,68 @@ public class ModuloDati
                   System.out.println("Scelta non valida.");
          }
 
-      }while(scelta != 2);
+      }while(scelta != 3);
+   }
+
+   /**
+    * Metodo in grado di inserire un nuovo utente
+    * @return
+    * Risultato funzione: "false" operazione fallita, "true" operazione riuscita
+    */
+   public boolean inserimentoNuovoUtente()
+   {
+      // Inizializzazione pessimistica
+      boolean ris = false;
+
+      // Flag di controllo, inizializzazione ottimistica
+      boolean check = false;
+
+      // Inserimento dati utente
+      System.out.print("Inserisci il tuo username: ");
+      String username = input.next();
+      System.out.print("Inserisci la tua password: ");
+      String password = input.next();
+
+      // Controllo credenziali utente
+      check = controlloCredenziali(username, password);
+      if(check == false)
+      {
+         // Aggiorno lo stato del flag
+         ris = true;
+         Utente utente = new Utente(1, username, password);
+         utenti.add(utente);
+      }
+
+      return ris;
+   }
+
+
+   /**
+    * Metodo in grado di controllo le credenziali dell'utente
+    * @param username
+    * @param password
+    * @return
+    Risultato funzione: "false" credenziali errate, "true" credenziali corrette
+    */
+   public boolean controlloCredenziali(String username, String password)
+   {
+      // Inizializzazione pessimistica
+      boolean flag = false;
+      boolean flagCiclo = false;
+
+      // Verifica se l'utente esiste
+      for (int i = 0; i < utenti.size() && flagCiclo == false; i++)
+      {
+         if (username.equals(utenti.get(i).username))
+         {
+            // Aggiorno flag ottimizzazione ciclo
+            flagCiclo = true;
+
+            // Aggiorno il risultato
+            flag = true;
+         }
+      }
+      return flag;
    }
 
 
@@ -74,27 +148,12 @@ public class ModuloDati
     */
    public boolean accedi()
    {
-      // Inizializzazione pessimistica
-      boolean flag = false;
-      boolean flagCiclo = false;
-
       System.out.print("Inserisci il tuo username: ");
       String username = input.next();
       System.out.print("Inserisci la tua password: ");
       String password = input.next();
 
-      // Verifica se l'utente esiste
-      for (int i = 0; i < utenti.size() && flagCiclo == false; i++)
-      {
-         if (username.equals(utenti.get(i).username))
-         {
-            // Aggiorno lo stato del flag per ottimizzare il ciclo
-            flagCiclo = true;
-
-            // Aggiorno il risultato
-            flag = true;
-         }
-      }
+      boolean flag = controlloCredenziali(username, password);
       return flag;
    }
 
@@ -134,6 +193,12 @@ public class ModuloDati
       }while(scelta != 2);
    }
 
+
+   /**
+    * Metodo in grado di visualizzare i prodotti registrati
+    * @param prodotti
+    * ArrayList dei prodotti
+    */
    public void visualizzaProdotti(ArrayList<Prodotti> prodotti)
    {
       for (Prodotti p : prodotti) 

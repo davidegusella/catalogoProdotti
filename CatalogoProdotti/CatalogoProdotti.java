@@ -6,7 +6,8 @@ public class CatalogoProdotti
 {
    public static void main(String[] args)
    {
-      // Creo degli utenti
+      
+      // Inserimento utenti
       Utente utente1 = new Utente(1, "davide", "123");
       Utente utente2 = new Utente(2, "simone", "456");
       ArrayList<Utente>utenti = new ArrayList<>();
