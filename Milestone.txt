@@ -1,0 +1,45 @@
+ArrayList
+
+Milestone 1 - Inizializzazione del Progetto e Accesso Utente
+1] Iniziate creando un repository su GitHub per il vostro progetto.
+2] Crea un nuovo progetto Java in Visual Studio Code
+   Suggerimento: Crea una classe principale chiamata CatalogoProdotti che fungerà da punto di ingresso dell'applicazione.
+3] Crea una struttura dati (ad esempio, un ArrayList) per memorizzare i prodotti.
+4] Implementate un menu di accesso con le seguenti opzioni: Accedi come Utente, Esci.
+5] Consentite all'utente di inserire un nome utente e una password (la registrazione può essere fatta solo da "Utente").
+6] Verificate le credenziali e permettete l'accesso se sono corrette.
+7] Dopo l'accesso come utente, visualizzate un menu con le seguenti opzioni: Visualizza Prodotti, Esci.
+
+
+
+Milestone 2 - Implementazione dell'Accesso Amministratore e Gestione dei Prodotti
+1) Implementate la funzionalità di accesso come "Amministratore".
+2) Dopo l'accesso come amministratore, visualizzate un menu con tutte le opzioni, comprese quelle per la gestione dei prodotti.
+3) Consentite la creazione di nuovi prodotti, includendo i seguenti dettagli per ciascun prodotto: Nome del prodotto 
+   (una stringa che rappresenta  il nome del prodotto), Prezzo del prodotto (un valore numerico che rappresenta il prezzo del prodotto) Quantità disponibile (un valore numerico che rappresenta la quantità di prodotti disponibili)
+4) Implementate la funzionalità per l'aggiunta di nuovi prodotti con questi dettagli.
+5) Consentite la rimozione di prodotti esistenti, consentendo all'utente di specificare un criterio (ad esempio, nome del prodotto).
+6) Aggiornate il catalogo dopo la rimozione del prodotto.
+7) Mostrate un messaggio di conferma dopo l'aggiunta o la rimozione dei prodotti.
+
+
+
+Milestone 3 - Implementazione delle Altre Opzioni
+1) Dettagli per l'Implementazione di "Visualizza Prodotti"
+2) Implementate la funzionalità "Visualizza Prodotti" che consente di visualizzare l'elenco completo dei prodotti nel catalogo.
+3) Mostrate tutti i dettagli dei prodotti, compreso il nome, il prezzo e la quantità disponibile.
+4) Dettagli per l'Implementazione di "Modifica Prodotto"
+5) Implementate la funzionalità "Modifica Prodotto" che consente di modificare i dettagli di un prodotto esistente.
+6) Consentite all'utente di specificare il prodotto da modificare, ad esempio, inserendo il nome del prodotto.
+7) Consentite di modificare il nome, il prezzo e la quantità disponibile del prodotto.
+8) Dopo la modifica, aggiornate il catalogo con le nuove informazioni.
+9) Dettagli per l'Implementazione di "Cerca Prodotto"
+10) Implementate la funzionalità "Cerca Prodotto" che consente di cercare prodotti nel catalogo in base a criteri specifici.
+11) Consentite all'utente di specificare un criterio di ricerca (ad esempio, nome del prodotto) e visualizzare tutti i prodotti che corrispondono 
+      a quel criterio.
+
+
+IMPORTANTE: ADMIN può creare, modificare, cancellare e leggere
+USER: Leggere
+(Bonus: Cerca prodotto)
+Assicuratevi di commentare e documentare il codice in modo appropriato mentre procedete con l'implementazione.
