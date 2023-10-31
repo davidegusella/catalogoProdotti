@@ -3,15 +3,16 @@ package CatalogoProdotti;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ModuloDati
+public class ModuloDatiUtente
 {
    // Attributi
    ArrayList<Utente> utenti;
    ArrayList<Prodotti> prodotti;
+   ArrayList<Admin> admin;
    Scanner input;
 
    // Costruttore
-   ModuloDati(ArrayList<Utente> utenti, ArrayList<Prodotti> prodotti)
+   ModuloDatiUtente(ArrayList<Utente> utenti, ArrayList<Prodotti> prodotti)
    {
       this.utenti = utenti;
       this.prodotti = prodotti;
@@ -80,6 +81,7 @@ public class ModuloDati
 
       }while(scelta != 3);
    }
+
 
    /**
     * Metodo in grado di inserire un nuovo utente

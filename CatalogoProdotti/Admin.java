@@ -1,22 +1,22 @@
 package CatalogoProdotti;
 
-public class Utente 
+public class Admin 
 {
-   // Attributi utente
-   // identificativo univoco dell'utente
+   // Attributi Admin
+   // identificativo univoco dell'admin
    int id; 
    String username;
    String password;
 
-   // Utente livello "0" di default
+   // Admin livello "1" di default
    int livello;
 
    // Costruttore
-   Utente(int id, String username, String password)
+   Admin(int id, String username, String password)
    {
       this.id = id;
       this.username = username;
       this.password = password;
-      livello = 0;
+      livello = 1;
    }
 }
