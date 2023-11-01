@@ -26,9 +26,8 @@ public class CatalogoProdotti
 
       // istanza modulo dati
       ModuloDati moduloDati = new ModuloDati(utenti, prodotti, admin);
-      
 
-      // Visualizzo il menu degli utenti/admin
+      // Visualizzo menu di login
       moduloDati.login();
    }
 }

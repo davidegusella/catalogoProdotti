@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ModuloDati
 {
-   // Attributi - Strutture dati contenenti i dati
+   // Attributi - Strutture dati
    ArrayList<Utente> utenti;
    ArrayList<Prodotti> prodotti;
    ArrayList<Admin> admin;
@@ -63,8 +63,6 @@ public class ModuloDati
    }
 
    // METODI PER L'UTENTE ****************************************************
-
-
    /**
     * Metodo in grado di mostrare il menu
    */
@@ -83,7 +81,7 @@ public class ModuloDati
          System.out.print("Inserisci la tua scelta: ");
          scelta = input.nextInt();
 
-         // Appoggio per controllare il risultato delle funzioni
+         // Appoggio per controllare il risultato dei metodi
          boolean flag = false;
 
          // Esegue l'azione corrispondente alla scelta
@@ -91,8 +89,6 @@ public class ModuloDati
          {
             case 1:
                flag = accessoUtente();
-
-               // Se l'accesso è avvenuto correttamente, l'utente visualizza il menu con le operazioni
                if(flag)
                {
                   System.out.println("Accesso effettuato con successo.");
@@ -106,8 +102,6 @@ public class ModuloDati
 
             case 2:
                flag = inserimentoNuovoUtente();
-
-               // Controllo se l'inserimento è avvenuto correttamente
                if(flag)
                {
                   System.out.println("Inserimento nuovo utente efettuato con successo");
@@ -119,7 +113,6 @@ public class ModuloDati
                break;
 
             case 3:
-                  // esegui la funzione login che si trova nel modulo dati
                   login();
                break;
 
@@ -162,11 +155,11 @@ public class ModuloDati
    }
 
    /**
-    * Metodo in grado di controllo le credenziali dell'utente
+    * Metodo in grado di controllare esistono già le stesse credenziali utente
    * @param username
    * @param password
    * @return
-   Risultato funzione: "false" credenziali errate, "true" credenziali corrette
+   Risultato funzione: "false" credenziali non esistenti, "true" credenziali esistenti
    */
    public boolean controlloCredenzialiUtente(String username, String password)
    {
@@ -204,7 +197,7 @@ public class ModuloDati
    }
 
    /**
-    * Metodo in grado di mostrare il menu dell'utente
+    * Metodo in grado di mostrare il menu utente
    */
    public void menuUtente()
    {
@@ -239,8 +232,6 @@ public class ModuloDati
    }
 
    // ADMIN *******************************************************************
-
-
    /**
     * Metodo in grado di mostrare il menu
    */
@@ -266,8 +257,6 @@ public class ModuloDati
          {
             case 1:
                   flag = accessoAdmin();
-
-                  // Se l'accesso è avvenuto correttamente, l'utente visualizza il menu con le operazioni
                   if(flag)
                   {
                      System.out.println("Accesso effettuato con successo.");
@@ -415,7 +404,6 @@ public class ModuloDati
 
 
    // PRODOTTI ****************************************************************
-
    /**
     * Metodo in grado di inserire un nuovo prodotto
     * @return
@@ -457,11 +445,11 @@ public class ModuloDati
    }
 
    /**
-    * Metodo in grado di controllare se il prodotto esiste già
+    * Metodo in grado di controllare se il prodotto esiste
    * @param nome
    * Nome Prodotto
    * @return
-   * Risultato funzione: "false" Prodotto no esistente, "true" Prodotto esistente
+   * Risultato funzione: "false" Prodotto non esistente, "true" Prodotto esistente
    */
    public boolean controlloProdotto(String nome)
    {
@@ -569,11 +557,11 @@ public class ModuloDati
    /**
     * Metodo in grado di cercare un prodotto
     * @param prodotti
-    * ArrayList dei prodotti
+    * Struttura dati dei prodotti
     */
    public void cercaProdotto(ArrayList<Prodotti> prodotti)
    {
-      // Flag ottimizzazione ciclo, inizializzazione pessimistica
+      // Flag di ricerca del prodotto, inizializzazione pessimistica
       boolean flagCiclo = false;
 
       System.out.print("Inserisci il nome del prodotto da cercare: ");
@@ -586,7 +574,7 @@ public class ModuloDati
             // Stampo i dati del prodotto
             System.out.println("NOME: " + prodotti.get(i).nome + " PREZZO: " + prodotti.get(i).prezzo + " euro" + " QUANTITA: " + prodotti.get(i).quantita);
 
-            // Aggiorno flag ottimizzazione ciclo
+            // Aggiorno lo stato flag
             flagCiclo = true;
          }
       }
