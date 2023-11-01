@@ -1,22 +1,23 @@
 package CatalogoProdotti;
+import java.util.Scanner;
 
-public class Utente 
+public class Utente
 {
    // Attributi utente
-   // identificativo univoco dell'utente
-   int id; 
    String username;
    String password;
 
-   // Utente livello "0" di default
-   int livello;
+   // Allocazione oggetti utili
+   Scanner input;
+   ModuloDati moduloDati;
+   Prodotti prodotto;
 
    // Costruttore
-   Utente(int id, String username, String password)
+   Utente(String username, String password)
    {
-      this.id = id;
       this.username = username;
       this.password = password;
-      livello = 0;
+
+      input = new Scanner(System.in);
    }
 }

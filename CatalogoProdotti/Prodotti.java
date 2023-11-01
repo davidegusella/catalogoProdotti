@@ -1,15 +1,16 @@
 package CatalogoProdotti;
+import java.util.ArrayList;
 
 public class Prodotti 
 {
-   int id;
    String nome;
    double prezzo;
+   int quantita;
 
-   Prodotti(int id, String nome, double prezzo)
+   Prodotti(String nome, double prezzo, int quantita)
    {
-      this.id = id;
       this.nome = nome;
       this.prezzo = prezzo;
+      this.quantita = quantita;
    }
 }

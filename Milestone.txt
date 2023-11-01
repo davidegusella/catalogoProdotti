@@ -13,21 +13,21 @@ Milestone 1 - Inizializzazione del Progetto e Accesso Utente
 
 
 Milestone 2 - Implementazione dell'Accesso Amministratore e Gestione dei Prodotti
-1) Implementate la funzionalità di accesso come "Amministratore".
-2) Dopo l'accesso come amministratore, visualizzate un menu con tutte le opzioni, comprese quelle per la gestione dei prodotti.
-3) Consentite la creazione di nuovi prodotti, includendo i seguenti dettagli per ciascun prodotto: Nome del prodotto 
+1] Implementate la funzionalità di accesso come "Amministratore".
+2] Dopo l'accesso come amministratore, visualizzate un menu con tutte le opzioni, comprese quelle per la gestione dei prodotti.
+3] Consentite la creazione di nuovi prodotti, includendo i seguenti dettagli per ciascun prodotto: Nome del prodotto 
    (una stringa che rappresenta  il nome del prodotto), Prezzo del prodotto (un valore numerico che rappresenta il prezzo del prodotto) Quantità disponibile (un valore numerico che rappresenta la quantità di prodotti disponibili)
-4) Implementate la funzionalità per l'aggiunta di nuovi prodotti con questi dettagli.
-5) Consentite la rimozione di prodotti esistenti, consentendo all'utente di specificare un criterio (ad esempio, nome del prodotto).
-6) Aggiornate il catalogo dopo la rimozione del prodotto.
-7) Mostrate un messaggio di conferma dopo l'aggiunta o la rimozione dei prodotti.
+4] Implementate la funzionalità per l'aggiunta di nuovi prodotti con questi dettagli.
+5] Consentite la rimozione di prodotti esistenti, consentendo all'utente di specificare un criterio (ad esempio, nome del prodotto).
+6] Aggiornate il catalogo dopo la rimozione del prodotto.
+7] Mostrate un messaggio di conferma dopo l'aggiunta o la rimozione dei prodotti.
 
 
 
 Milestone 3 - Implementazione delle Altre Opzioni
-1) Dettagli per l'Implementazione di "Visualizza Prodotti"
-2) Implementate la funzionalità "Visualizza Prodotti" che consente di visualizzare l'elenco completo dei prodotti nel catalogo.
-3) Mostrate tutti i dettagli dei prodotti, compreso il nome, il prezzo e la quantità disponibile.
+1] Dettagli per l'Implementazione di "Visualizza Prodotti"
+2] Implementate la funzionalità "Visualizza Prodotti" che consente di visualizzare l'elenco completo dei prodotti nel catalogo.
+3] Mostrate tutti i dettagli dei prodotti, compreso il nome, il prezzo e la quantità disponibile.
 4) Dettagli per l'Implementazione di "Modifica Prodotto"
 5) Implementate la funzionalità "Modifica Prodotto" che consente di modificare i dettagli di un prodotto esistente.
 6) Consentite all'utente di specificare il prodotto da modificare, ad esempio, inserendo il nome del prodotto.
