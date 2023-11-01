@@ -28,18 +28,12 @@ Milestone 3 - Implementazione delle Altre Opzioni
 1] Dettagli per l'Implementazione di "Visualizza Prodotti"
 2] Implementate la funzionalità "Visualizza Prodotti" che consente di visualizzare l'elenco completo dei prodotti nel catalogo.
 3] Mostrate tutti i dettagli dei prodotti, compreso il nome, il prezzo e la quantità disponibile.
-4) Dettagli per l'Implementazione di "Modifica Prodotto"
-5) Implementate la funzionalità "Modifica Prodotto" che consente di modificare i dettagli di un prodotto esistente.
-6) Consentite all'utente di specificare il prodotto da modificare, ad esempio, inserendo il nome del prodotto.
-7) Consentite di modificare il nome, il prezzo e la quantità disponibile del prodotto.
-8) Dopo la modifica, aggiornate il catalogo con le nuove informazioni.
-9) Dettagli per l'Implementazione di "Cerca Prodotto"
-10) Implementate la funzionalità "Cerca Prodotto" che consente di cercare prodotti nel catalogo in base a criteri specifici.
-11) Consentite all'utente di specificare un criterio di ricerca (ad esempio, nome del prodotto) e visualizzare tutti i prodotti che corrispondono 
+4] Dettagli per l'Implementazione di "Modifica Prodotto"
+5] Implementate la funzionalità "Modifica Prodotto" che consente di modificare i dettagli di un prodotto esistente.
+6] Consentite all'utente di specificare il prodotto da modificare, ad esempio, inserendo il nome del prodotto.
+7] Consentite di modificare il nome, il prezzo e la quantità disponibile del prodotto.
+8] Dopo la modifica, aggiornate il catalogo con le nuove informazioni.
+9] Dettagli per l'Implementazione di "Cerca Prodotto"
+10] Implementate la funzionalità "Cerca Prodotto" che consente di cercare prodotti nel catalogo in base a criteri specifici.
+11] Consentite all'utente di specificare un criterio di ricerca (ad esempio, nome del prodotto) e visualizzare tutti i prodotti che corrispondono 
       a quel criterio.
-
-
-IMPORTANTE: ADMIN può creare, modificare, cancellare e leggere
-USER: Leggere
-(Bonus: Cerca prodotto)
-Assicuratevi di commentare e documentare il codice in modo appropriato mentre procedete con l'implementazione.

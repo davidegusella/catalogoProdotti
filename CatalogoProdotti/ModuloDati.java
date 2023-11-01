@@ -345,7 +345,9 @@ public class ModuloDati
          System.out.println("1. Visualizza prodotti");
          System.out.println("2. Registrazione nuovi prodotti");
          System.out.println("3. Eliminazione prodotti");
-         System.out.println("4. Esci");
+         System.out.println("4. Modifica prodotti");
+         System.out.println("5. Cerca prodotto");
+         System.out.println("6. Esci");
 
          // Inserimento scelta
          System.out.print("Inserisci la tua scelta: ");
@@ -386,14 +388,29 @@ public class ModuloDati
                break;
 
             case 4:
-                  //
+                  flag = modificaProdotto();
+                  if(flag)
+                  {
+                     System.out.println("Modifica prodotto effettuata con successo");
+                  }
+                  else
+                  {
+                     System.out.println("Errore! Modifica un prodotto esistente");
+                  }
                break;
+
+            case 5:
+                  cercaProdotto(prodotti);
+               break;
+
+            case 6:
+                  menuAccessoAdmin();
 
             default:
                   System.out.println("Scelta non valida.");
          }
 
-      }while(scelta != 4);
+      }while(scelta != 6);
    }
 
 
@@ -409,28 +426,20 @@ public class ModuloDati
       // Inizializzazione pessimistica
       boolean ris = false;
 
-      // Flag di controllo, inizializzazione ottimistica
-      boolean check = false;
-
       // Inserimento dati
       System.out.print("Inserisci il nome del prodotto: ");
       String nome = input.next();
+      System.out.print("Inserisci il prezzo del prodotto: ");
+      double prezzo = input.nextDouble();
+      System.out.print("Inserisci la quantità del prodotto: ");
+      int quantita = input.nextInt();
 
-      // Controllo se il prodotto esiste già
-      check = controlloProdotto(nome);
-      if(check == false)
-      {
-         System.out.print("Inserisci il prezzo del prodotto: ");
-         double prezzo = input.nextDouble();
-         System.out.print("Inserisci la quantità del prodotto: ");
-         int quantita = input.nextInt();
+      Prodotti prodotto = new Prodotti(nome, prezzo, quantita);
+      prodotti.add(prodotto);
 
-         Prodotti prodotto = new Prodotti(nome, prezzo, quantita);
-         prodotti.add(prodotto);
+      // Aggiorno lo stato del flag
+      ris = true;
 
-         // Aggiorno lo stato del flag
-         ris = true;
-      }
       return ris;
    }
 
@@ -439,7 +448,7 @@ public class ModuloDati
     * @param prodotti
     * ArrayList dei prodotti
     */
-   public static void visualizzaProdotti(ArrayList<Prodotti> prodotti)
+   public void visualizzaProdotti(ArrayList<Prodotti> prodotti)
    {
       for (Prodotti p : prodotti) 
       {
@@ -511,5 +520,80 @@ public class ModuloDati
          ris = true;
       }
       return ris;
+   }
+
+   /**
+    * Metodo in grado di modificare un prodotto
+    * @return
+    * Risultato funzione: "false" operazione fallita, "true" operazione riuscita
+    */
+   public boolean modificaProdotto()
+   {
+      // Inizializzazione pessimistica
+      boolean ris = false;
+
+      // Flag di controllo, inizializzazione ottimistica
+      boolean check = false;
+
+      // Inserimento dati
+      System.out.print("Nome prodotto da modificare: ");
+      String nome = input.next();
+
+      // Controllo se il prodotto esiste già
+      check = controlloProdotto(nome);
+      if(check)
+      {
+         // Cerco indice prodotto da eliminare
+         for (int i = 0; i < prodotti.size(); i++)
+         {
+            if (nome.equalsIgnoreCase(prodotti.get(i).nome))
+            {
+               System.out.print("Inserisci nuovo nome prodotto: ");
+               String nuovoNome = input.next();
+               System.out.print("Inserisci nuovo prezzo prodotto: ");
+               double nuovoPrezzo = input.nextDouble();
+               System.out.print("Inserisci nuova quantità prodotto: ");
+               int nuovaQuantita = input.nextInt();
+
+               Prodotti prodotto = new Prodotti(nuovoNome, nuovoPrezzo, nuovaQuantita);
+               prodotti.set(i, prodotto);
+
+               // Aggiorno lo stato del flag
+               ris = true;
+            }
+         }
+      }
+      return ris;
+   }
+
+   /**
+    * Metodo in grado di cercare un prodotto
+    * @param prodotti
+    * ArrayList dei prodotti
+    */
+   public void cercaProdotto(ArrayList<Prodotti> prodotti)
+   {
+      // Flag ottimizzazione ciclo, inizializzazione pessimistica
+      boolean flagCiclo = false;
+
+      System.out.print("Inserisci il nome del prodotto da cercare: ");
+      String nome = input.next();
+
+      for (int i = 0; i < prodotti.size(); i++)
+      {
+         if (nome.equalsIgnoreCase(prodotti.get(i).nome))
+         {
+            // Stampo i dati del prodotto
+            System.out.println("NOME: " + prodotti.get(i).nome + " PREZZO: " + prodotti.get(i).prezzo + " euro" + " QUANTITA: " + prodotti.get(i).quantita);
+
+            // Aggiorno flag ottimizzazione ciclo
+            flagCiclo = true;
+         }
+      }
+
+      if (flagCiclo == false) 
+      {
+         System.out.println("Prodotto non trovato");
+      }
    }
 }
